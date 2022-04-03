@@ -1,0 +1,549 @@
+/* 1.general style  */
+/* 2.common style */
+/* 3.1 header section */
+/* 3.2 landing section
+3.3 feature section
+3.4 service section
+3.5 portfolio section
+3.6 about section
+3.7 footer section */
+
+/*1.  general style.............................................................................. */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+
+/* small screen */
+@media (min-width:768px){
+    .container {
+        width: 750px;
+    }
+    .services2 .services2-col{
+        margin: 60px 0px;
+    }
+}
+/* medium screen */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large screen */
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+:root{
+    --main-color:#10cab7;
+    --secondary-color:#2c4755;
+    --section-color:#f6f6f6;
+    --section-padding:80px 0px;
+}
+.heading{
+    text-align: center;
+}
+.heading>h2>a{
+    font-size: 100px;
+    color:#ebeced ;
+    font-weight:800;
+    line-height: 55px;
+    letter-spacing: -3px;
+    text-transform: capitalize;
+}
+.heading>p{
+    font-size:21px ;
+    color:#797979 ;
+    line-height:22px ;
+}
+@media (max-width:992px){
+    .services .services-content .services-left {
+        grid-row-gap: 150px;
+    }
+    .services2 .services2-col{
+        margin: 50px 0px;
+    }
+}
+@media (max-width:768px){
+    .services .container .services-content .services-left{
+        grid-row-gap: 200px;
+        grid-column-gap: 50px;
+    }
+    .services .container .services-content .services-right{
+        display: none;
+    }
+    /* .................................................................................... */
+    .services2-box{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .services2{
+        padding:var(--section-padding + 20px 0px);
+    }
+    /* .............................................................................................. */
+    .portfolio .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    /* ............................................................................................ */
+    .about .about-content{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about .about-content .about-img::before,
+    .about .about-content .about-img::after{
+        display: none;
+    }
+
+    .about .about-content .about-info{
+        padding-left: 0;
+    }
+}
+
+/* 2. common style............................... */
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+/* 3. header section.................................................................. */
+.header{
+    padding: 20px;
+}
+.header .container{
+display: flex;
+width: 80%;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin: auto;
+}
+.container .logo{
+    max-width: 60px;
+}
+.links{
+    position: relative;
+}
+.header .links .icon{
+    width:30px;
+    display: flex;
+    flex-direction: column;
+    /* another solution ......... */
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+}
+.header .links:hover ul{
+    /* visibility: visible; */
+    display: block;
+}
+.header .links .icon span:first-child{
+    width: 100%;
+    background-color: #333;
+    height: 2px;
+}
+.header .links .icon span:nth-child(2){
+    width: 60%;
+    background-color: #333;
+    height: 2px;
+    margin: 5px 0px;
+    transition: 0.4s;
+
+}
+.header .links .icon span:last-child{
+    width: 100%;
+    background-color: #333;
+    height: 2px;
+}
+.header .links .icon:hover span:nth-child(2){
+    width: 100%;
+}
+.header .links ul{
+    position: absolute;
+    background-color: #f2f2f2;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    /* visibility: hidden; */
+    display: none;
+    z-index: 20;
+}
+.header .links ul::before{
+    position: absolute;
+    content: "";
+    border-width: 10px; 
+    border-style:solid;
+    border-color: transparent transparent #f2f2f2 transparent ;
+    right: 5px;
+    top: -20px;
+}
+.header .links ul li a{
+    display: block;
+    padding: 15px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    transition: 0.4s;
+}
+.header .links ul li a:hover{
+    padding-left: 25px;
+}
+.header .links ul li:last-child a{
+    border-bottom: 0;
+}
+/* another solusion.... */
+/* .header .links ul li:not(:last-child) a{
+    border-bottom: 2px solid #ddd;
+} */
+/* /header .................................................... */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*3.1 landing section......................................................... */
+.landing{
+    width: 100%;
+    height:550px;
+    background-image: url(../pictures/landing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.imghero{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 350px;
+        /* to be able to seen in mobile screen with the same formate and same width */
+    max-width: 100%;
+}
+.landing .imghero h2{
+text-transform: capitalize;
+font-size: 55px;
+color: var(--main-color);
+padding-bottom: 20px;
+}
+.landing .imghero p{
+    font-size: 20px;
+    line-height: 35px;
+}
+/* /landing */
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+/*3.2 feature section............................................................... */
+.feature{
+    padding: var(--section-padding);
+    background-color: #f6f6f6;
+}
+.feature .container{
+    display: grid;
+    /* to be able to shown in mobile screen without scroller */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    text-align: center;
+}
+.feature .container .box-feature{
+    padding: 20px;
+}
+.feature .container .box-feature h2{
+font-size: 20px;
+line-height: 70px;
+font-weight: 800;
+text-transform: capitalize;
+}
+.feature .container .box-feature .f-icon{
+    font-size: 45px;
+    color: var(--main-color);
+}
+.feature .container .box-feature p{
+    line-height: 30px;
+    color: #777;
+    font-size: 17px;
+}
+/* /feature */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* 3.3 services section........................................... */
+.services{
+    padding: var(--section-padding);
+}
+.services-content{
+display: flex;
+flex-wrap: wrap;
+padding-top: 100px;
+}
+.services-left{
+    flex:2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+
+.services-right{
+    flex:1;
+    position: relative;
+margin-left: 40px;
+}
+.services-right::before{
+    position: absolute;
+    content: " ";
+    background-color:var(--secondary-color) ;
+    height: calc(100% + 100px);
+    width: 100px;
+    z-index: -1;
+    top: -50px;
+    right: 0;
+}
+.services-box{
+    position: relative;
+}
+.services-info{
+    position: absolute;
+    padding-left: 60px;
+}
+.s-icon{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 30px;
+    color: var(--main-color);
+}
+.services-info>p{
+    line-height: 1.7;
+    color: #777;
+}
+.services-info>h2{
+    padding-bottom: 20px;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /3.3 services */
+/* 3.3 services2 section */
+.services2{
+    padding: var(--section-padding);
+}
+.services2 .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap: 30px;
+    padding-left: 50px;
+}
+.services2-box{
+    display: flex;
+    margin-bottom: 50px;
+}
+.services2 .services2-box .s2-icon{
+    flex-basis: 50px;
+    /* in order to be the width equal height in mobile screen */
+    font-size: 30px;
+    color: var(--main-color); 
+}
+.services2-col{
+    position: relative;
+}
+.services2-col::before{
+    position: absolute;
+    content: "";
+    background-color:var(--secondary-color);
+    height: calc(100% + 100px);
+    width: 100px;
+    left: 0;
+    bottom: -50px;
+    margin-left: -50px;
+    z-index: -1;
+}
+.services2-info{
+    padding-left: 20px;
+}
+.services2-info>p{
+    line-height: 1.7;
+    color: #777;
+}
+.services2-info>h2{
+    padding-bottom: 20px;
+}
+/* /services2........ */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* 3.4 portfolio section */
+.portfolio{
+    padding: var(--section-padding);
+    background-color: var(--section-color);
+}
+.portfolio .container{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    padding-top: 50px;
+}
+.portfolio-box{
+    flex:1;
+    background-color: white;
+}
+.p-b2{
+        margin:0px 30px;
+}
+.portfolio-box h2{
+    text-transform: capitalize;
+    font-size: 20px;
+    line-height: 2.5;
+    padding: 0px 20px;
+
+}
+.portfolio-box p{
+    color: #777;
+    line-height: 1.7;
+    padding: 0px 20px;
+    padding-bottom: 20px;
+}
+.port-in{
+    width: 100%;
+}
+/* .................................................................................................................. */
+/* another solution by using grid */
+.portfolio2{
+    padding: var(--section-padding);
+    background-color: var(--section-color);
+}
+.portfolio2 .container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+.portfolio2-box{
+    background-color: white;
+}
+.portfolio2-box h2{
+    text-transform: capitalize;
+    font-size: 20px;
+    line-height: 2.5;
+    padding: 0px 20px;
+}
+.portfolio2-box p{
+    color: #777;
+    line-height: 1.7;
+    padding: 0px 20px;
+    padding-bottom: 20px;
+
+}
+.port-in2{
+    width: 100%;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /portfolio */
+/* 3.5 about section.......................................................... */
+.about{
+    padding:var(--section-padding);
+}
+.about-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+.about-img{
+    width: 250px;
+    height: 375px;
+    position: relative;
+}
+.about-pic{
+    max-width: 100%;
+}
+.about-img::before{
+position: absolute;
+content: "";
+width: 100px;
+height: calc(100% + 80px);
+background-color:#ebeced;
+top: -40px;
+left: -20px;
+z-index: -1;
+}
+.about-img::after{
+position: absolute;
+content: "";
+width: 120px;
+height: 80%;
+border-left: 80px solid var(--main-color);
+border-bottom: 80px solid var(--main-color);
+top: -40px;
+right: -150px;
+z-index: -1;
+}
+.about-info{
+    flex: 2;
+    padding-left: 200px;
+}
+.about-info span{
+    display: block;
+    width: 300px;
+    height: 2px;
+    background-color: var(--main-color);
+}
+/* another solution
+.about-info hr{
+    display: inline-block;
+    width:50%
+    background-color: var(--main-color);
+} */
+.about-info .f-p{
+    padding: 50px 0px;
+    line-height: 1.7;
+    font-weight: 800;
+}
+.about-info .s-p{
+    color: #777;
+    padding: 30px 0px;
+    line-height: 1.7;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /about */
+/* 3.6 contact section.................................................. */
+.contact{
+    padding: var(--section-padding);
+    background-color: var(--section-color);
+}
+.contact-info{
+    padding-top: 80px;
+    margin: 0 auto;
+    text-align: center;
+}
+.c-h1{
+color: var(--secondary-color);
+font-size: 35px;
+letter-spacing: -3px;
+font-weight: 800;
+}
+.contact-info .c-h2 a{
+color: var(--main-color);
+font-size: 35px;
+line-height: 1.8;
+font-weight: 800;
+}
+.c-sp{
+    text-transform: capitalize;
+}
+.c-icon{
+    color: var(--secondary-color);
+}
+/* /////////////////////////////////////////////////////////////////////////////// */
+/* footer section.............................................. */
+.end{
+    margin: 0 auto;
+    text-align: center;   
+    background-color:var(--secondary-color) ;
+}
+.end p{
+    padding:30px 0px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 18px;
+}
